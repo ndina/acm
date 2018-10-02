@@ -5,7 +5,8 @@
 using namespace std;
 
 int main(){
-	int n, k, sum = 0;
+	int n, sum = 0;
+	string k;
 //	char ch[k];
 	cin >> n >> k;
 	int age = n % 10;
