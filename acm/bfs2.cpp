@@ -48,5 +48,25 @@ void bfs(){
     }
 }
 int main(){
-  
+
+
+    int n, m;
+    cin >> n >> m;
+
+    for(int i = 0; i < m; i++){
+        int x, y;
+        cin >> x>> y;
+
+        g[x].push_back(y);
+    }
+
+    for(int i = 0; i < n; i++){
+        if(!used[i]){
+            bfs();
+        }
+    }
+    
+    for(int i = 0; i < n; i++){
+        cout << res[i] + 1 << " ";
+    }
 }
