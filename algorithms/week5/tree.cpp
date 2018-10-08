@@ -50,7 +50,21 @@ node * add(int x, node * root){
 			}
 		}
 		return root;
+}
+void inOrder(node *root){
+
+	if(root == NULL){
+		return;
 	}
+	inOrder(root->left);
+
+	cout << root->val << endl;
+
+	inOrder(root->right);
+
+}
+
+
 
 int main(){
 	node * root = NULL;
@@ -66,6 +80,8 @@ int main(){
 		}
 	}
 
-	cout << h;
+	inOrder(root);
+
+
      return 0;
 }
