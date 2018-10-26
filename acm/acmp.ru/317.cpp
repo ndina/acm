@@ -12,7 +12,7 @@ int rec(int x, int y, int z, int w){
     	res = w - x * i;
     	for(int j = 0; j < res / y + 1; j++){
     		//res = w - i * x - j * y;
-    		if((res - y * j )% z == 0){
+    		if((res - y * j ) % z == 0){
     			cnt++;
     		}
     	}

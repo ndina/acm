@@ -30,6 +30,7 @@ void quickSort(int arr[], int left, int right) {
 
 }
 
+
 int main() {
 	int n;
 	cin>>n;
