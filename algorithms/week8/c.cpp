@@ -86,7 +86,7 @@ int main()
         insert(root,a[i]);
 
         search(root, a[i]) ? cout <<"Yes\n" : cout << "No\n";
-    }
+    }   
 
 
    } 

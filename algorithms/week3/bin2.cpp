@@ -1,19 +1,28 @@
 #include <iostream>
 #include <cmath>
+
 #include <math.h>
 
 using namespace std;
+
 bool bin_search(int *a, int n, int x ){
+
 	int l = 0, r = n - 1;
+
 	bool ok = false;
+
 	while(l <= r){
+
 		int m = (l + r) / 2;
+
 		if(a[m] < x){
 			l = m + 1;
 		}
+
 		else if (a[m] >  x){
 			r = m;
 		}
+		
 		else{
 			ok = true;
 			break;

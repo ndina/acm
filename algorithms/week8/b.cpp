@@ -53,6 +53,13 @@ void mergeSort(int a[]){
 }
 
 int main(){
+	int a[1000]
+	while(cin >> a[i]){
+		mergeSort(a[i]);
+		i++;
+	}
+
+	
 
 
 
