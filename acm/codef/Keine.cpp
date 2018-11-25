@@ -15,10 +15,6 @@ int main(){
 			st.push(s[i]);
             ans += '[';
 		}
-		else if(st.top() == '>' && s[i] == '<'){
-			st.pop();
-			ans+=']';
-		}
 		else if(st.top() == '<' && s[i] == '>'){
 			st.pop();
 			ans+=']';

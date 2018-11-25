@@ -1,27 +1,21 @@
 #include <iostream>
-#include <algorithm>
 
 using namespace std;
 
 int main(){
-	string s;
-	char c;
-	int n;
-    int cnt = 0;
-	cin >> s >> c >> n;
+	int n, m ,k;
+	cin >> n >> m >> k;
+	int cnt = 0, sum = 0;
 
-	for(int i = 0; i < s.size(); i++){
-		if(s[i] == c){
-			cnt++;
+	while(true){
+		cnt += m;
+		sum++;
+		if(cnt >= n){
+			cout << sum;
+			return 0;
+		}
+		else{
+			cnt-=k;
 		}
 	}
-
-	if(cnt == n){
-		cout <<"YES";
-	}
-	else{
-		cout <<"NO";
-	}
-
-	return 0;
 }
