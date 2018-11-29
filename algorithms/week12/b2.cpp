@@ -2,12 +2,7 @@
 using namespace std;
 int m,n;
 char str[1002][1002];
-/*
-    *
-    * Prosen Ghosh
-    * American International University - Bangladesh (AIUB)
-    *
-*/
+
 void DFS(int x,int y){
 
     if(x < 0 || y < 0 || x == m || y == n)return;

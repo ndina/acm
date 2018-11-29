@@ -6,7 +6,7 @@ char c[1000][1000];
 int n, m;
 
 void dfs(int x, int y){
-	if(x < 0 || y < 0 || x == m || x == n) return;
+	if(x < 0 || y < 0 || x == m || y == n) return;
 
 	if(c[x][y] != '@') return;
 

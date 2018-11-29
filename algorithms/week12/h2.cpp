@@ -37,7 +37,7 @@ int main(){
 			for(int j = 1; j <= n; j++){
 				 cin >> a[i][j];
 			}
-		}
+		}   		
 		for(int i = 1; i <= n; i++)	mini[i] = a[1][i];
 		vis[1] = true;
 		
@@ -46,7 +46,7 @@ int main(){
 			vis[ind] = true;
 			sum += mini[ind];
 
-			cout << sum << " ";
+			//cout << sum << " ";
 
 			for(int j = 1; j <= n; j++){
 				if(a[ind][j] < mini[j] ){

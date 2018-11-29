@@ -21,10 +21,7 @@ void dfs(int v){
 		if(mini = a[v][j]){
 			dfs(j);
 		}
-
 	}
-	
-
 }
 
 int main(){

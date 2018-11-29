@@ -18,11 +18,14 @@ int findmin()
     }
     return k;
 }
+
 int main()
 {
     
     int ans;
-    while(cin >> n)
+
+    
+    while(scanf("%d",&n)!=EOF)
     {
         ans=0;
         memset(vis,false,sizeof(vis));
