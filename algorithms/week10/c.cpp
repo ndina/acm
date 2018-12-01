@@ -4,7 +4,7 @@ using namespace std;
 #define pb push_back
 
 const int p = 31;
-map<ll, ll> m;
+map<int,int> m;
 
 int main(){
   ll n;
@@ -19,14 +19,14 @@ int main(){
   	}
   	string t;
   	cin >> t;
-  	vector<ll>p_pow(s.size());
+  	vector<int>p_pow(s.size());
   	p_pow[0] = 1;
 
   	for(int i = 1; i < p_pow.size(); i++){
        p_pow[i] = p_pow[i-1] * p;
     }
     
-    vector<ll> h(t.size());
+    vector<int> h(t.size());
     for(int i = 0; i < t.size(); i++){
   		h[i] = (t[i] - 'a' + 1) * p_pow[i];
   		if(i > 0) h[i] += h[i-1];
@@ -47,9 +47,9 @@ int main(){
   	 	
   	 }
 
-  	 ll maxi = max(m[cur_h]);
+  	 int maxi = max(m[cur_h], maxi);
 
-  	 map<string, ll>:: iterator it;
+  	 map<string, int>:: iterator it;
 
   	 for(it = m.begin(); it != m.end(); it++){
   	 	if((*it).second == maxi){
