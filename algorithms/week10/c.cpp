@@ -32,13 +32,13 @@ int main(){
   		if(i > 0) h[i] += h[i-1];
   	}
 
-  	ll h_s[n];
+  	int h_s[n];
   	 for(int i = 0; i < v[i].size(); i++){
   	 	for(int j = 0; j < v[i].size(); j++){
   	 		h_s[i] += (v[i][j] - 'a' + 1) * p_pow[i];
   	 	}
   	 }
-  	 ll cur_h;
+  	 int cur_h;
 
   	 for(int i = 0; i + v[i].size() - 1 < t.size(); i++){
   	 	 cur_h = h[i + v[i].size() - 1];

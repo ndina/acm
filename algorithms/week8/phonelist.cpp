@@ -31,19 +31,6 @@ void insertString(Node *root,string s){
   current->isitEnd=true;
 }
 
-bool doestriehave(Node *root,string s){
-  Node *current=root;
-  for(int i =0;i<s.size();i++){
-    char c=s[i];
-    Node *node=current->child[c];
-    if(!node){
-      return false;
-    }
-    current=node;
-  }
-  return current->isitEnd;
-}
-
 int howmanyStarts(Node *root,string s){
   Node *current=root;
   for(int i=0;i<s.size();i++){
@@ -85,3 +72,19 @@ int main(){
   }
   return 0;
 }
+
+
+
+
+// bool doestriehave(Node *root,string s){
+//   Node *current=root;
+//   for(int i =0;i<s.size();i++){
+//     char c=s[i];
+//     Node *node=current->child[c];
+//     if(!node){
+//       return false;
+//     }
+//     current=node;
+//   }
+//   return current->isitEnd;
+// }

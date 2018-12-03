@@ -1,48 +1,65 @@
 #include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cmath>
+#include <string>
+#include <cctype>
+#include <stack>
+#include <queue>
+#include <vector>
+#include <cstdlib>
+#include <list>
+#include <math.h>
 
 using namespace std;
 
-bool used[1000];
-int d[1000];
-int a[1000][1000];
-int c[1000]; 
-int mini = 19919;
+static const int N = 100;
+static const int INFTY = (1 << 21);
 
-int main(){
-	//read matrix
-    int test;
-    cin >> test;
-    int n, m;
-    while(test--){
-    	cin >> n >> m;
-    	for(int i = 0; i < n; i++){
-    		for(int j = 0; j < 2; j++){
-    			cin >> a[i][j] >> d[i];
-    		}
-    	}
+int n, M[N][N] = { 0 }, d[N];
 
-        for(int i = 0; i < n; i++){
-        	int k = -1;
-        	for(int j = 0; j < n; j++){
-        		if(used[j] && (k == - 1 || d[k] > d[j])){
-        			k = j;
-        		}
-        		used[k] = true;
-        	}
-        	for(int j = 0; j < n; j++){
-				if(!used[j] && d[k] > a[k][j] && a[k][j] > 0){
-					d[j] = a[k][j];
-					mini = min(mini, d[j]);
-				}
-			}
+void bfs(int s);
+
+int main() {
+
+    int u, k, v;
+
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        cin >> u >> k;
+        u--;
+        for (int j = 0; j < k; j++) {
+            cin >> v;
+            v--;
+            M[u][v] = 1;
         }
-        cout << mini;
-
-
-
     }
+    bfs(0);
 
-  
+    return 0;
+}
 
-	return 0;
+void bfs(int s) {
+    queue<int> q;
+    q.push(s);
+
+    for (int i = 0; i < n; i++) {
+        d[i] = INFTY;
+    }
+    d[s] = 0;
+    int u;
+    while (!q.empty()) {
+        u = q.front();
+        q.pop();
+        for (int v = 0; v < n; v++) {
+            if (M[u][v] == 0)continue;
+            if (d[v] != INFTY)continue;
+            d[v] = d[u] + 1;
+            q.push(v);
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        cout << i + 1 << " " << ((d[i] == INFTY) ? (-1) : d[i]) << endl;
+    }
 }
