@@ -8,7 +8,7 @@ int a[1000][1000];
 int c[1000]; 
 
 int main(){
-	//read matrix
+	//read matrix3333333333333333333
 	int n;
 	for(int i = 0; i < n; i ++){
 		int k = -1;
@@ -16,8 +16,7 @@ int main(){
 			if(!used[j] && (k == -1 || d[k] > d[j])){
 				k = j;
 			}
-			used[k] = true;
-		}
+                                                                                                                 		}
 		for(int j = 0; j < n; j++){
 			if( d[k] > d[k] + a[k][j] && a[k][j] > 0){
 				d[j] = a[k][j]

@@ -1,61 +1,55 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 
 using namespace std;
-#define pb push_back
-int n, m;
 
-vector<int> g[100];
+bool used[10101];
 vector<int>res;
-bool used[100];
+vector<int>g[10010];
 
 void dfs(int v){
 	used[v] = true;
-	for(int i = 0; i < g[v].size(); i++)
-		if(used[g[v][i]] == false)
-			dfs(g[v][i]);
-	
-    res.pb(v + 1);
+	for(int i = 0; i < g[v].size(); i++){
+		int to = g[v][i];
+		if(used[to] == false){
+			dfs(to);
+		}
+	}
+	res.push_back(v + 1);
 }
 
-void topsort(int n){
-	for(int i = 0; i < n; i++)
+void TopSort(int n){
+	for(int i = 0; i < n; i++){
 		used[i] = false;
-	//res.clear();
+	}
 
-	for(int i = 0; i < n; i++)
-		if(!used[i])
+	for(int i = 0; i < n; i++){
+		if(used[i] == false){
 			dfs(i);
-	reverse(res.begin(), res.end());
-	
-}
+		}
+	}
 
-int top[1000];
+	reverse(res.begin(), res.end());
+}
 
 int main(){
-
+	int n, m;
 	cin >> n >> m;
-    int x, y;
-
+	int x, y;
 	for(int i = 0; i < m; i++){
 		cin >> x >> y;
-        x--;
-        y--;
-        g[x].pb(y);
+		x--;
+		y--;
+		g[x].push_back(y);
 	}
-		topsort(n);
+	TopSort(n);
 
 	for(int i = 0; i < res.size(); i++){
 		cout << res[i] << " ";
 	}
+
 	cin >> x >> y;
-	if(x == 0 && y == 0) {
+	if(x == 0 && y == 0){
 		return 0;
 	}
 
-
-
-
-	return 0;
 }

@@ -38,7 +38,6 @@ int main()
 		cout << my_set.size() <<"\n";
 
 		my_set.clear();
-		//my_set.erase(my_set.begin(), my_set.end());
-	}
+		}
 	return 0;
 }
