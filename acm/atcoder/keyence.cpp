@@ -124,7 +124,7 @@ int main(){
 		}
 		if(s[i] == 'c'){
 
-               v.pb(s[i]);
+              v.pb(s[i]);
 
 		}
 	}
@@ -133,6 +133,26 @@ int main(){
 		cout << "NO";
 		return 0;
 	}
+
+	for(int i = 0; i < v.size(); i++){
+		if(v[i] == 'k'){
+			index1 = i;
+		}
+		if(v[i] == 'e'){
+			index2 = i;
+		}
+		if(v[i] == 'y'){
+			index3 = i;
+		}
+		if(v[i] == 'n'){
+			index4 == i;
+		}
+		if(v[i] == 'c'){
+			index5 == i;
+		}
+	}
+
+
 
 
 

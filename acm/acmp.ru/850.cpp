@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 int main(){
 
 	int a, b, minA, maxA, MaxB, minB;
@@ -30,4 +29,5 @@ int main(){
 	cout << max(minA, minB) << " " << min(maxA, MaxB);
 
 	return 0; 
+
 }
