@@ -75,16 +75,16 @@ int main(){
 		sum2 += vv[0] / u;
 	}
 
-	cout <<sum2 << endl;
+//	cout <<sum2 << endl;
 
 	if(vv[vv.size() - 1] != l){
 		sum2 += ((l - vv[vv.size() - 1]) / u);
 	}
-	cout <<sum2 << endl;
+	//cout <<sum2 << endl;
 
 	for( int i = 0; i < vv.size() - 1; i++){
 		sum2 += (abs(vv[i] - vv[i + 1]) / u);
-		cout << sum2 << endl;
+	//	cout << sum2 << endl;
 	}
   //5 + 1,538 + 10 + 58.46 + 1 + 55,38
 	d res = sum1 + sum2;

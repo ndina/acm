@@ -21,12 +21,12 @@ int main(){
     sort(a, a + n);
 
     for(int i = 0; i < n / 2; i++){
-    	cnt1+=a[i];
+    	cnt1 += a[i];
     }
      for(int i = n/2; i < n; i++){
-    	cnt2+=a[i];
+    	cnt2 += a[i];
     }
-  //  cout << cnt1 << endl << cnt2 << endl;
+   // cout << cnt1 << " " << cnt2 << endl;
     cout << cnt2 - cnt1;
     
     return 0;

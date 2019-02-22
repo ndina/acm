@@ -3,7 +3,7 @@
 #include <vector>
 
 using namespace std;
-vector <int> v, vv;
+vector <int> v, vv, vvv;
 int main(){
 	int n, cnt = 0, cnt1 = 0;
     cin >> n;
@@ -14,27 +14,42 @@ int main(){
 			cnt += a[i];
 			vv.push_back(i);
 		}
-		else{
-			cnt1 += abs(a[i]);
+		else if(a[i]<0){
+			cnt1 +=(a[i]);
 			v.push_back(i);
 		}
+		else{
+			vvv.push_back(a[i]);
+		}
 	}
-	if(cnt == 0 || cnt1 == 0){
-		cout << 1 << endl;
-		cout << 0 ;
+	// if(cnt == 0 || cnt1 == 0){
+	// 	// cout << 1 << endl;
+	// 	cout << 0 ;
 		
+	// }
+	if(vvv.size() == n){
+		cout << 0;
+		return 0;
 	}
-	else if(cnt > cnt1){
-		cout << cnt << endl;
+	else if(cnt > abs(cnt1)){
+		cout << vv.size() << endl;
 		for(int i = 0; i < vv.size(); i++){
 			cout << vv[i] + 1 << " ";
 		}
 	}
-	else{
+	else if(cnt < abs(cnt1)){
+		cout << v.size() << endl;
 		for(int i = 0; i < v.size(); i++){
-			cout << cnt1 << endl;
+			//cout << v.size() << endl;
 			cout << v[i] + 1 << " ";
 		}
+	}
+	else{
+		  cout << vv.size() << endl;
+		for(int i = 0; i < vv.size(); i++){
+			cout << vv[i] + 1 << " ";
+		}
+
 	}
 return 0;
 }

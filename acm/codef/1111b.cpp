@@ -1,40 +1,38 @@
 #include <bits/stdc++.h>
+#include <iomanip>
+
 
 using namespace std;
-
-#define ll long long
-
-#define pb push_back
-
-vector<int>v;
+#define d double
 
 int main(){
-	ll n, k, m;
+
+	int n, k, m;
+
 	cin >> n >> k >> m;
-	ll a[n];
+
+	d sum = 0;
+
+	d a[n];
+
 	for(int i = 0; i < n; i++){
 		cin >> a[i];
-		v.pb(a[i]);
-
+		sum += a[i];
 	}
-	sort(v.begin(), v.end());
 
-	reverse(v.begin(), v.end());
+	sort(a, a + n);
 
-	for(int i = 0; i < m; i++){
-		v[i] += k;
-		res1 += v[i] / n;
+	d ans = 0;
+
+	for(int i = 0; i <= min(m, n); i++){
+	    if(i == n) break;
+		d add = sum;
+		add += min(k * (n - i), m - i);
+		ans = max(ans, (d(add))/(n - i));
+		sum -= a[i];
 	}
-	ll a = 0, j = 0;
-	for(int i = 0; i < n - 1 - a; i++ ){
-		sum[j] += v[i];
-        a--;
-        j++;
-	}
-	for
-	
-	// for(int i = 0; i < n; i++){
-	// 	cout << v[i] << " ";
-
-	// }
+    
+	cout <<fixed<< setprecision(10);
+	cout  << ans << endl;
+	return 0;
 }
