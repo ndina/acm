@@ -4,48 +4,42 @@
 #include <stdlib.h>
 using namespace std;
  
-struct f
-{
-    string name;
-    double points, l;
-};
 
-int auth_cmp(const void* a, const void* b)
-{
-    info* c = (info*)a;
-    info* d = (info*)b;
-    return strcmp(c->l, d->l);
-}
 
-map<string, double> m;
+map<string, int> mp;
 int main(){
 
     int n, m;
     cin >> n >> m;
-    int index, s;
+    string s;
+    int p;
+    int sum = 0;
  
-    f a[n];
+
  
     for(int i = 0; i < n; i++ ){
-        cin >> a[i].name;
+        cin >> s;
         for(int j = 0; j < m; j++){
-            cin >>a[j].points; 
-            a[i].l += a[j].points;
+            cin >>p;
+            sum += p;
 
         }
-        m[a[i].name] = a[i].l;
+        mp[s] = sum;
+        sum = 0;
         //mini = min(mini, a[i].l);
         
     }
-     double maxi = -10;
-    map<string, double>:: iterator it;
+    int maxi = 101010;
+    map<string, int>:: iterator it;
 
-    for(it = m.begin(); it != m.end(); it++){
-       maxi = max(maxi, (*it).second);
+    for(it = mp.begin(); it != mp.end(); it++){
+       maxi = min(maxi, (*it).second);
     }
-     for(it = m.begin(); it != m.end(); it++){
+
+   // cout << maxi << endl;
+     for(it = mp.begin(); it != mp.end(); it++){
        if((*it).second == maxi){
-        cout << (*it).name;
+        cout << (*it).first;
         return 0;
        }
     }
