@@ -1,7 +1,7 @@
+
 #include <bits/stdc++.h>
 
 using namespace std;
-
 #define se second
 #define sz size()
 #define mp make_pair
@@ -33,9 +33,29 @@ vector<int>v1, v2;
 
 
 signed main(){
-	int n;
+	unsigned int n, sum = 0, cnt = 0, cur;
+
 	cin >> n;
-	cout << binpow(2, n);
+	while(true){
+		do{
+			cur = n % 10;
+			n /= 10;
+			sum += cur;
+			cnt++;
+		}
+		while(n > 0);
+			if(sum < 10) break;
+			else{
+				n = sum;
+				sum = 0;
+
+			}
+		
+	}
+
+	cout << sum << " " << cnt - 1;
+
+    
 
 	return 0;
 }

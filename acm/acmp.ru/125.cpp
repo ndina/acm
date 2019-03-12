@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
 #define se second
 #define sz size()
 #define mp make_pair
@@ -33,9 +32,38 @@ vector<int>v1, v2;
 
 
 signed main(){
+	freopen("INPUT.TXT", "r", stdin);
+	freopen("OUTPUT.TXT", "w", stdout);
 	int n;
 	cin >> n;
-	cout << binpow(2, n);
+	int a[n][n];
+	for(int i = 1; i <= n; i++){
+		for(int j = 1; j <= n; j++){
+			cin >> a[i][j];
+		}
+	}
+	
+	int b[n];
+	for(int i = 1; i <= n; i++){
+		cin >> b[i];
+	}
+	int cnt = 0;
+
+	for(int i = 1; i <= n; i++){
+		for(int j = 1; j <= n; j++){
+			if(a[i][j] == a[j][i] && a[i][j] == 1){
+				if(b[i] != b[j]){
+				//	cout << i << " " << j << endl;
+					cnt++;
+				}
+			}
+		}
+	}
+
+
+
+	cout << cnt /2;
+
 
 	return 0;
 }
