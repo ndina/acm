@@ -1,6 +1,4 @@
-#include <iostream>
-#include <stack>
-#include <vector>
+#include<bitst/stdc++.h>
 
 using namespace std;
 
